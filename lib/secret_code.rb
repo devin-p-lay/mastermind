@@ -6,11 +6,11 @@ class SecretCode
 
 
   def generate_code
-  colors = ["r","g","b","y"]
-  code = []
-  4.times do
-    code << colors.sample(1)
-  end
-  code.flatten!
+    colors = ["r","g","b","y"]
+    code = []
+    4.times do
+      code << colors.sample(1)
+    end
+    code.flatten!
   end
 end
