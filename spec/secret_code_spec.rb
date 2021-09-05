@@ -13,4 +13,8 @@ RSpec.describe SecretCode do
     expect(secret_code.colors.length).to eq(4)
   end
 
+  it 'generates random code of 4' do
+    secret_code = SecretCode.new
+    expect(secret_code.generate_code.length).to eq(4)
+  end
 end

@@ -1,5 +1,5 @@
 require 'rspec'
-# require './lib/secret_code'
+require './lib/secret_code'
 require './lib/evaluating_guess'
 
 RSpec.describe EvaluatingGuess do

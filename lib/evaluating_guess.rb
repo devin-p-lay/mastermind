@@ -20,8 +20,7 @@ class EvaluatingGuess
           end
         end
       end
-      hash
+      hint
     end
-
   end
 end
