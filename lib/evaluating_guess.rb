@@ -1,10 +1,10 @@
 require "./lib/secret_code"
 
 class EvaluatingGuess
-  def initialize(secret_code)
-    @secret_code = secret_code
-  end
-  
+  # def initialize(secret_code)
+  #   @secret_code = secret_code
+  # end
+
   def prompt
     puts "What is your guess?"
   end
