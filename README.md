@@ -21,7 +21,7 @@ What's your guess?
 
 * They can then enter a guess in the form rrgb
 
-Guesses are case insensitive
+EvaluatingGuesses are case insensitive
 If it’s 'q' or 'quit' then exit the game
 If it’s 'c' or 'cheat' then print out the current secret code
 If it’s fewer than four letters, tell them it’s too short
