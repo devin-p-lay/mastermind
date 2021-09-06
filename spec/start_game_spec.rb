@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/start_game'
+require './lib/secret_code'
 
 RSpec.describe StartGame do
   it "exists" do
@@ -9,7 +10,7 @@ RSpec.describe StartGame do
 
   it 'introduces the game' do
     start_game = StartGame.new
-    # expect(start_game.intro)
+    expect(start_game.welcome).to eq(intro)
   end
 
 end
