@@ -42,34 +42,18 @@ attr_reader :start_game
     puts "Here you go cheater: #{secret_code}"
   end
 
-  def user_input
-     prompt = gets.chomp
-    if prompt == 'p'
-      play_message
-
-      prompt_a_guess_message
-
-      #game_flow
-    elsif prompt == 'i'
-      instructions_message
-
-      # instructions
-      # procceds to play
-    elsif prompt == 'q'
-      quits_message
-      #quit s program
-    elsif prompt == 'c'
-      pumpkin_eater
-    else
-      puts "try again"
-      #repeats intro
-    end
-  end
-
   def prompt_a_guess_message
      puts "What's your guess?"
   end
 
+  def win_message
+    puts "You did it!"
+    puts "You are the MASTERMIND!"
+  end
 
-
+  def hint_message
+  puts "#{guess_attempt} has #{hint[:correct_colors]} of the correct elements with #{hint[:correct_positions]} in the correct positions"
+  # build a guess_count
+  puts "You've taken #{guess_count} guess"
+  end
 end
