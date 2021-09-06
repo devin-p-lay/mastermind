@@ -29,16 +29,21 @@ def start_game_input
   end
 end
 
-def guess_attempt
+def player_guess_attempt
   gets.chomp.to_a
 end
 # call iinstructions method
-def player_quit
-end
-# quit
+
 def player_cheat
+  prompt == 'c'
+  pumpkin_eater
 end
 
-def guess_count
+def player_guess_count
+  guess_count = []
+  guess_count << guess += 1
+end
+
+def player_quit
 end
 # cheat outputs SecretCode

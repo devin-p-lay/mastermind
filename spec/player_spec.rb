@@ -11,6 +11,5 @@ RSpec.describe Player do
   end
 
   it "can receive player input" do
-
   end
 end
