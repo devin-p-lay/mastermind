@@ -7,4 +7,6 @@ RSpec.describe StartGame do
     expect(start_game).to be_an_instance_of(StartGame)
   end
 
+  
+
 end
