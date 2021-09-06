@@ -40,7 +40,7 @@ RSpec.describe EvaluatingGuess do
       attempt = EvaluatingGuess.new
       user_guess = ["g","r","g","r"]
       secret_code = ["g","g","g","g"]
-      expect(attempt.guess(user_guess,secret_code)).to eq({correct_colors: 0, correct_positions: 2})
+      expect(attempt.guess(user_guess,secret_code)).to eq({correct_colors: 2, correct_positions: 2})
     end
   end
 end
