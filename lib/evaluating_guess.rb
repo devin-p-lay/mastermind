@@ -5,20 +5,23 @@ require "./lib/game"
 
 class EvaluatingGuess
   attr_reader :colors
-  def initialize
-    @userguess = player.player_guess_attempt
-    @secret_code = game.secret_code
+  def initialize(player, secret_code)
+    @user_guess = player.player_guess_attempt
+    @secret_code = secret_code.colors
   end
 
 
   def guess
-
     hint = {correct_colors: 0, correct_positions: 0}
     if @user_guess == @secret_code
-      win_message
+      "you win"
+    elsif @user_guess == ["q"]
+      exit
+    elsif @user_guess == ["c"]
+      p @secret_code
     else
-      @user_guess.each_with_index do |x, index|
-        if x == @secret_code[index]
+      @user_guess.each_with_index do |element, index|
+        if element == @secret_code[index]
             hint[:correct_positions] += 1
         end
       end
@@ -38,7 +41,7 @@ class EvaluatingGuess
       end
 
       puts "You have #{hint[:correct_colors]} colors correct and #{hint[:correct_positions]} colors in the correct position."
-      hint
+
     end
   end
 end
