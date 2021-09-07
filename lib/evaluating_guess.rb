@@ -1,28 +1,31 @@
 require "./lib/secret_code"
+require "./lib/message"
+require "./lib/player"
 
 class EvaluatingGuess
-  def initialize(secret_code)
-    @secret_code = secret_code
+  attr_reader :colors
+  def initialize
+    @colors = colors
   end
 
 
-  def guess(user_guess, secret_code)
-    secret_code = SecretCode.colors
+  def guess
+
     hint = {correct_colors: 0, correct_positions: 0}
-    if user_guess == secret_code
-      "you win"
+    if @user_guess == @secret_code
+      win_message
     else
-      user_guess.each_with_index do |x, index|
-        if x == secret_code[index]
+      @user_guess.each_with_index do |x, index|
+        if x == @secret_code[index]
             hint[:correct_positions] += 1
         end
       end
 
       ["b","r","g","y"].each do |color|
-        user_color = user_guess.find_all do |element|
+        user_color = @user_guess.find_all do |element|
           element == color
         end.count
-        secret_color = secret_code.find_all do |element|
+        secret_color = @secret_code.find_all do |element|
           element == color
         end.count
         if secret_color >= user_color
