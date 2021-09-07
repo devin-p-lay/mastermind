@@ -1,15 +1,12 @@
 class Message
-attr_reader :start_game
 
   def initialize
-    @start_game = start_game
   end
 #do we do anything else here?
   def welcome_message
     puts "Welcome to MASTERMIND"
     puts "Would you like to (p)lay the game, read the (i)nstructions, or (q)uit?"
   end
-  require "pry"; binding.pry
 
   def play_message
     puts  "play"
@@ -25,7 +22,7 @@ attr_reader :start_game
     puts "Each code is made up of 4 random elements"
     puts "I will give you hints along the way"
     puts "If you want to cheat type 'c'"
-    puts "You are being timed..."
+    puts "What do you want to do next?? (p)lay or (q)uit??"
   end
 
   def quits_message
@@ -34,11 +31,10 @@ attr_reader :start_game
   end
 # edge case placeholder
   def wrong_input
-    puts "I don't understand"
     puts "Please try again"
   end
 
-  def pumpkin_eater
+  def pumpkin_eater #pass in arg
     puts "Here you go cheater: #{secret_code}"
   end
 
@@ -51,9 +47,11 @@ attr_reader :start_game
     puts "You are the MASTERMIND!"
   end
 
-  def hint_message
-  puts "#{guess_attempt} has #{hint[:correct_colors]} of the correct elements with #{hint[:correct_positions]} in the correct positions"
-  # build a guess_count
-  puts "You've taken #{guess_count} guess"
+  def hint_message #pass in args
+  # puts "#{guess_attempt} has #{hint[:correct_colors]} of the correct elements with #{hint[:correct_positions]} in the correct positions"
+  # # build a guess_count
+  # puts "You've taken #{guess_count} guess"
+  puts "You have #{hint[:correct_colors]} colors correct and #{hint[:correct_positions]} colors in the correct position."
+
   end
 end
