@@ -10,6 +10,8 @@ RSpec.describe Player do
     expect(player).to be_an_instance_of(Player)
   end
 
-  it "can receive player input" do
+  it "lets the player cheat" do
+    player = Player.new
+    expect(player.player_cheat).to eq(pumpkin_eater)
   end
 end
