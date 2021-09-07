@@ -25,8 +25,10 @@ RSpec.describe Game do
       message = Message.new
       player = Player.new(message)
       game = Game.new(message, player)
-      expect(game).to receive(:gets_user_input).and_return("p")
+      # game.player.should_receive(gets_user_input).and_return('p')
+      # allow(game).to receive_message_chain(:player, :gets_user_input).and_return("p")
       expect(game.start_game_input).to eq(message.play_message)
+
     end
 
     it 'instruction message' do
@@ -43,6 +45,13 @@ RSpec.describe Game do
       game = Game.new(message, player)
       expect(game).to receive(:gets_user_input).and_return("q")
       expect(game.start_game_input).to eq(message.quits_message)
+    end
+
+    it "what does gameflow do" do
+      message = Message.new
+      player = Player.new(message)
+      game = Game.new(message, player)
+      expect(game.game_flow).to receive(:player_guess_attempt).and_return(["rrrr"])
     end
   end
 end
