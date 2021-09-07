@@ -9,7 +9,6 @@ attr_reader :start_game
     puts "Welcome to MASTERMIND"
     puts "Would you like to (p)lay the game, read the (i)nstructions, or (q)uit?"
   end
-  require "pry"; binding.pry
 
   def play_message
     puts  "play"
