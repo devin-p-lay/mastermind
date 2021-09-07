@@ -9,7 +9,7 @@ class Player
   end
 
   def player_guess_attempt
-    gets.chomp.split
+    gets.chomp.split("")
   end
   # call iinstructions method
 #

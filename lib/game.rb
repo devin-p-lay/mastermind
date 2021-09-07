@@ -10,16 +10,11 @@ class Game
     @message = message
     @player = player
     @secret_code = SecretCode.new
-    @evaluating_guess = EvaluatingGuess.new
+    welcome
   end
 
   def gets_user_input
     gets.chomp.downcase.strip
-  end
-
-  def game_flow
-    @player.player_guess_attempt
-    # @evaluating_guess.guess
   end
 
   def welcome
@@ -30,22 +25,33 @@ class Game
   def start_game_input
     prompt = gets_user_input
     if prompt == 'p'
-
       @message.play_message
       @message.prompt_a_guess_message
       game_flow
 
     elsif prompt == 'i'
       @message.instructions_message
-      # start_game_input
-
+      gets_user_input
+        if prompt == 'p'
+          @message.play_message
+          @message.prompt_a_guess_message
+          game_flow
+        else
+          exit
+        end
     elsif prompt == 'q'
       @message.quits_message
-      # exit!
+      exit
     else
       @message.wrong_input
-      # start_game_input
+      start_game_input
     end
+  end
+
+  def game_flow
+    @player.player_guess_attempt
+    evaluating_guess = EvaluatingGuess.new
+    evaluating_guess.guess
   end
 end
 

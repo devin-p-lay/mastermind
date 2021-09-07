@@ -1,11 +1,13 @@
 require "./lib/secret_code"
 require "./lib/message"
 require "./lib/player"
+require "./lib/game"
 
 class EvaluatingGuess
   attr_reader :colors
   def initialize
-    @colors = colors
+    @userguess = player.player_guess_attempt
+    @secret_code = game.secret_code
   end
 
 

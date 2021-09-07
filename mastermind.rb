@@ -6,7 +6,7 @@ require './lib/message.rb'
 require './lib/game.rb'
 
 #create menu class???
-player = Player.new
 message = Message.new
+player = Player.new(message)
 
 game = Game.new(message, player)
