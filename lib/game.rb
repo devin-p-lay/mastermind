@@ -26,7 +26,7 @@ class Game
     prompt = gets_user_input
     if prompt == 'p'
       @message.play_message
-      @message.prompt_a_guess_message
+
       game_flow
 
     elsif prompt == 'i'
@@ -34,7 +34,6 @@ class Game
       gets_user_input
         if prompt == 'p'
           @message.play_message
-          @message.prompt_a_guess_message
           game_flow
         else
           exit
@@ -49,9 +48,12 @@ class Game
   end
 
   def game_flow
-    @player.player_guess_attempt
-    evaluating_guess = EvaluatingGuess.new
+    evaluating_guess = EvaluatingGuess.new(@player, @secret_code)
+
+    @message.prompt_a_guess_message
+
     evaluating_guess.guess
+    game_flow
   end
 end
 
