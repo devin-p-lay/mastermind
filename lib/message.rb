@@ -9,14 +9,13 @@ class Message
   end
 
   def play_message
-    puts  "play"
     puts  "I have generated a beginner sequence with four elements made up of:"
     puts  "(r)ed, (g)reen, (b)lue, and (y)ellow."
     puts  "Use (q)uit at any time to end the game."
+    puts  "What's your first guess??"
   end
 
   def instructions_message
-    puts "instructions"
     puts "****Rules of Gameplay****"
     puts "Your goal is to guess a secret code"
     puts "Each code is made up of 4 random elements"
@@ -26,7 +25,6 @@ class Message
   end
 
   def quits_message
-      puts "quit"
       puts "COOOOOWWWWWAAAAARDDDD"
   end
 # edge case placeholder

@@ -51,7 +51,7 @@ class Game
   def game_flow
     evaluating_guess = EvaluatingGuess.new(@player, @secret_code)
 
-    @message.prompt_a_guess_message
+    # @message.prompt_a_guess_message
 
     evaluating_guess.guess
     game_flow

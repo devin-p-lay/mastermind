@@ -14,7 +14,9 @@ class EvaluatingGuess
   def guess
     hint = {correct_colors: 0, correct_positions: 0}
     if @user_guess == @secret_code
-      "you win"
+      p "you win, you MASTERMIND you"
+      p "'q' to exit"
+
     elsif @user_guess == ["q"]
       exit
     elsif @user_guess == ["c"]
@@ -40,8 +42,9 @@ class EvaluatingGuess
         end
       end
 
+      puts "With the guess of #{@user_guess}:"
       puts "You have #{hint[:correct_colors]} colors correct and #{hint[:correct_positions]} colors in the correct position."
-
+      puts "What's your next guess???"
     end
   end
 end
