@@ -22,7 +22,7 @@ class Game
     start_game_input
   end
 
-  def start_game_input
+  def start_game_input #(gets passed a string prompt)
     prompt = gets_user_input
     if prompt == 'p'
       @message.play_message
@@ -39,6 +39,7 @@ class Game
           exit
         end
     elsif prompt == 'q'
+
       @message.quits_message
       exit
     else
@@ -54,6 +55,10 @@ class Game
 
     evaluating_guess.guess
     game_flow
+  end
+
+  def quit_game
+    prompt
   end
 end
 
