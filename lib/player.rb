@@ -1,5 +1,5 @@
 class Player
-  def initialize(message)
+   def initialize(message)
     @message = message
   end
 
@@ -11,6 +11,8 @@ class Player
   def player_guess_attempt
     gets.chomp.split("")
   end
+#this is important
+
   # call iinstructions method
 #
 #   def player_cheat
@@ -25,7 +27,7 @@ class Player
 #
 #   def player_quit
 #   end
-# # cheat outputs SecretCode
+#
 #
 #
 #
